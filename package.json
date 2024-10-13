@@ -1,18 +1,20 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
-  "description": "��#\u0000 \u0000m\u0000y\u0000-\u0000p\u0000o\u0000r\u0000t\u0000f\u0000o\u0000l\u0000i\u0000o\u0000\r\u0000 \u0000",
-  "main": "index.js",
+  "description": "",
+  "main": "backend/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon backend/server.js"
   },
   "keywords": [],
   "author": "",
+  "type": "module",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
-    "nodemailer": "^6.9.15"
+    "nodemailer": "^6.9.15",
+    "nodemon": "^3.1.7"
   }
 }
