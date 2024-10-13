@@ -5,4 +5,4 @@ const router = express.Router()
 
 router.post('/receive-mail',ReceiveMail)
 
-export default router
+export default router 
