@@ -1,5 +1,5 @@
 import nodemailer from 'nodemailer';
-
+import { ReviewModel } from '../models/model.js';
 
 export const ReceiveMail = async (req, res)=>{
     const { name, email, message } = req.body;
@@ -34,3 +34,22 @@ export const ReceiveMail = async (req, res)=>{
     res.status(500).json({ message: 'Error sending email', error });
   }
 }
+
+export const Review = async (req, res) => { 
+  try {
+    const {name, company, message} = req.body
+    if (!name || !company || !message) {
+      throw new Error("All fields are required");  
+  }
+    const newReview = new ReviewModel({name, company, message, createdAt: new Date()})
+    await newReview.save()
+    res.status(200).send({
+      message: 'Submitted Successfully'
+    })
+  } catch (error) { 
+    console.error(error)
+    res.status(400).send({
+      message: error.message
+    })
+  }
+} 
